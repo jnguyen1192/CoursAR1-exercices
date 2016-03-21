@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	//map 
 	var map = L.map('myMap');
-	map.setView([0, 0], 3);
+
 
 	//pattern
 	var mapPatternUrl = 'http://tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	function processPosition(event){
 		status.innerHTML = "Lat : " + event.coords.latitude + "° Long : " + event.coords.longitude + "° Precision : " + event.coords.accuracy + "m.";
 		marker.setLatLng( [event.coords.latitude, event.coords.longitude] );
-
+	    map.setView([event.coords.latitude, event.coords.longitude], 3);
 	}
 
 	function errorPosition(){
